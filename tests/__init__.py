@@ -9,6 +9,7 @@ class ApiBaseTestCase(unittest.TestCase):
     def setUp(self) -> None:
         """function to set up app context and test db"""
         self.app = create_app(TestConfig)
+        self.test_client = self.app.test_client()
         self.app_context = self.app.app_context()
         self.app_context.push()  # push app to app_context
         db.create_all()
