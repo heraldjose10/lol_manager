@@ -24,7 +24,7 @@ class Champion(Resource):
     def get(self):
         champions = _Champion.query.all()
         return {
-            'chamions': [
+            'champions': [
                 {
                     'id': champ.id,
                     'name': champ.name,
